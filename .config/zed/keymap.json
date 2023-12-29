@@ -1,0 +1,155 @@
+[
+  // cmd h,j,l reserve for debugger
+  {
+    "bindings": {
+      "cmd-h": null,
+      "cmd-shift-o": "workspace::Open",
+      "cmd-i": "editor::ToggleInlayHints",
+      "alt-shift-h": [
+        "workspace::SwapPaneInDirection",
+        "Left"
+      ],
+      "alt-shift-l": [
+        "workspace::SwapPaneInDirection",
+        "Right"
+      ],
+      "alt-shift-k": [
+        "workspace::SwapPaneInDirection",
+        "Up"
+      ],
+      "alt-shift-j": [
+        "workspace::SwapPaneInDirection",
+        "Down"
+      ],
+      "alt-h": [
+        "workspace::ActivatePaneInDirection",
+        "Left"
+      ],
+      "alt-l": [
+        "workspace::ActivatePaneInDirection",
+        "Right"
+      ],
+      "alt-k": [
+        "workspace::ActivatePaneInDirection",
+        "Up"
+      ],
+      "alt-j": [
+        "workspace::ActivatePaneInDirection",
+        "Down"
+      ],
+      "cmd-m": "editor::MoveToEnclosingBracket"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      // finder
+      "cmd-shift-f": "project_panel::RevealInFinder",
+      // absolute path
+      "cmd-shift-a": "project_panel::CopyPath",
+      // relative path
+      "cmd-shift-r": "project_panel::CopyRelativePath"
+    }
+  },
+  {
+    "context": "Editor && mode == full",
+    "bindings": {
+      "cmd-r": "projects::OpenRecent",
+      "cmd-o": "outline::Toggle"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-j": null,
+      "cmd-r": null,
+      "ctrl-`": null,
+      "cmd-b": "workspace::ToggleLeftDock",
+      "cmd-shift-b": "workspace::ToggleRightDock",
+      "cmd-`": "workspace::ToggleBottomDock",
+      "cmd-f1": "project_panel::ToggleFocus",
+      "cmd-f2": "collab_panel::ToggleFocus",
+      "cmd-f3": "diagnostics::Deploy",
+      "cmd-shift-e": null,
+      "shift-space": "project_panel::ToggleFocus",
+      "cmd-?": null
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "f8": null,
+      "shift-f8": null,
+      "cmd-shift-k": "editor::AddSelectionAbove",
+      "cmd-shift-j": "editor::AddSelectionBelow",
+      "cmd-e": "editor::GoToDiagnostic",
+      "cmd-shift-e": "editor::GoToPrevDiagnostic",
+      "cmd-l": null, // "editor::SelectLine"
+      "cmd-k cmd-r": "editor::FindAllReferences",
+      "cmd-k cmd-t": "editor::GoToTypeDefinition",
+      "cmd-k cmd-d": [
+        "editor::SelectPrevious",
+        {
+          "replace_newest": false
+        }
+      ],
+      "cmd-k cmd-l": [
+        "editor::SelectNext",
+        {
+          "replace_newest": true
+        }
+      ],
+      "cmd-k cmd-h": [
+        "editor::SelectPrevious",
+        {
+          "replace_newest": true
+        }
+      ]
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-k k": "pane::SplitUp",
+      "cmd-k j": "pane::SplitDown",
+      "cmd-k h": "pane::SplitLeft",
+      "cmd-k l": "pane::SplitRight",
+      "cmd-1": [
+        "pane::ActivateItem",
+        0
+      ],
+      "cmd-2": [
+        "pane::ActivateItem",
+        1
+      ],
+      "cmd-3": [
+        "pane::ActivateItem",
+        2
+      ],
+      "cmd-4": [
+        "pane::ActivateItem",
+        3
+      ],
+      "cmd-5": [
+        "pane::ActivateItem",
+        4
+      ],
+      "cmd-6": [
+        "pane::ActivateItem",
+        5
+      ],
+      "cmd-7": [
+        "pane::ActivateItem",
+        6
+      ],
+      "cmd-8": [
+        "pane::ActivateItem",
+        7
+      ],
+      "cmd-9": [
+        "pane::ActivateItem",
+        8
+      ]
+    }
+  }
+]
