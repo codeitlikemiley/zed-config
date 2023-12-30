@@ -1,110 +1,11 @@
 [
-  // cmd h,j,l reserve for debugger
+  // put key-bindings here that you want to work always
   {
     "bindings": {
       "cmd-h": null,
-      "cmd-shift-o": "workspace::Open",
-      "cmd-i": "editor::ToggleInlayHints",
-      "alt-shift-h": [
-        "workspace::SwapPaneInDirection",
-        "Left"
-      ],
-      "alt-shift-l": [
-        "workspace::SwapPaneInDirection",
-        "Right"
-      ],
-      "alt-shift-k": [
-        "workspace::SwapPaneInDirection",
-        "Up"
-      ],
-      "alt-shift-j": [
-        "workspace::SwapPaneInDirection",
-        "Down"
-      ],
-      "alt-h": [
-        "workspace::ActivatePaneInDirection",
-        "Left"
-      ],
-      "alt-l": [
-        "workspace::ActivatePaneInDirection",
-        "Right"
-      ],
-      "alt-k": [
-        "workspace::ActivatePaneInDirection",
-        "Up"
-      ],
-      "alt-j": [
-        "workspace::ActivatePaneInDirection",
-        "Down"
-      ],
-      "cmd-m": "editor::MoveToEnclosingBracket"
-    }
-  },
-  {
-    "context": "ProjectPanel",
-    "bindings": {
-      // finder
-      "cmd-shift-f": "project_panel::RevealInFinder",
-      // absolute path
-      "cmd-shift-a": "project_panel::CopyPath",
-      // relative path
-      "cmd-shift-r": "project_panel::CopyRelativePath"
-    }
-  },
-  {
-    "context": "Editor && mode == full",
-    "bindings": {
-      "cmd-r": "projects::OpenRecent",
-      "cmd-o": "outline::Toggle"
-    }
-  },
-  {
-    "context": "Workspace",
-    "bindings": {
-      "cmd-j": null,
-      "cmd-r": null,
-      "ctrl-`": null,
-      "cmd-b": "workspace::ToggleLeftDock",
-      "cmd-shift-b": "workspace::ToggleRightDock",
-      "cmd-`": "workspace::ToggleBottomDock",
-      "cmd-f1": "project_panel::ToggleFocus",
-      "cmd-f2": "collab_panel::ToggleFocus",
-      "cmd-f3": "diagnostics::Deploy",
-      "cmd-shift-e": null,
-      "shift-space": "project_panel::ToggleFocus",
-      "cmd-?": null
-    }
-  },
-  {
-    "context": "Editor",
-    "bindings": {
-      "f8": null,
-      "shift-f8": null,
-      "cmd-shift-k": "editor::AddSelectionAbove",
-      "cmd-shift-j": "editor::AddSelectionBelow",
-      "cmd-e": "editor::GoToDiagnostic",
-      "cmd-shift-e": "editor::GoToPrevDiagnostic",
-      "cmd-l": null, // "editor::SelectLine"
-      "cmd-k cmd-r": "editor::FindAllReferences",
-      "cmd-k cmd-t": "editor::GoToTypeDefinition",
-      "cmd-k cmd-d": [
-        "editor::SelectPrevious",
-        {
-          "replace_newest": false
-        }
-      ],
-      "cmd-k cmd-l": [
-        "editor::SelectNext",
-        {
-          "replace_newest": true
-        }
-      ],
-      "cmd-k cmd-h": [
-        "editor::SelectPrevious",
-        {
-          "replace_newest": true
-        }
-      ]
+      "cmd-k cmd-z": "zed::ToggleFullScreen",
+      "cmd-shift-o": "workspace::Open"
+      // replace with macro expansion in rust
     }
   },
   {
@@ -114,6 +15,7 @@
       "cmd-k j": "pane::SplitDown",
       "cmd-k h": "pane::SplitLeft",
       "cmd-k l": "pane::SplitRight",
+      // cannot disable ctrl-1
       "cmd-1": [
         "pane::ActivateItem",
         0
@@ -149,7 +51,187 @@
       "cmd-9": [
         "pane::ActivateItem",
         8
+      ],
+      "ctrl-1": null,
+      "ctrl-2": null,
+      "ctrl-3": null,
+      "ctrl-4": null,
+      "ctrl-5": null,
+      "ctrl-6": null,
+      "ctrl-7": null,
+      "ctrl-8": null,
+      "ctrl-9": null,
+      "ctrl-0": null
+    }
+  },
+  // vim keybinding like for project panel
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "c": "project_panel::CopyPath",
+      "r": "project_panel::Rename",
+      "x": "project_panel::Delete",
+      "f": "project_panel::RevealInFinder",
+      "p": "project_panel::CopyRelativePath",
+      "q": "project_panel::CollapseAllEntries",
+      "a": "project_panel::NewFile",
+      "s": "project_panel::NewSearchInDirectory",
+      "l": "project_panel::ExpandSelectedEntry",
+      "h": "project_panel::CollapseSelectedEntry",
+      "k": "menu::SelectPrev",
+      "j": "menu::SelectNext"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "space": "project_panel::Open"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-j": null,
+      "cmd-?": null,
+      "cmd-shift-m": null,
+      "alt-cmd-x": "workspace::CloseAllDocks",
+      // dock controls
+      "cmd-b": "workspace::ToggleLeftDock",
+      "cmd-shift-b": "workspace::ToggleRightDock",
+      // bottom dock controls
+      "cmd-`": "terminal_panel::ToggleFocus",
+      "ctrl-`": "workspace::ToggleBottomDock",
+      // left sidebar panels
+      "cmd-f1": "project_panel::ToggleFocus",
+      "cmd-f2": "collab_panel::ToggleFocus",
+      "cmd-f3": "diagnostics::Deploy",
+      "shift-space": "project_panel::ToggleFocus",
+      "ctrl-1": [
+        "workspace::ActivatePane",
+        0
+      ],
+      "ctrl-2": [
+        "workspace::ActivatePane",
+        1
+      ],
+      "ctrl-3": [
+        "workspace::ActivatePane",
+        2
+      ],
+      "ctrl-4": [
+        "workspace::ActivatePane",
+        3
+      ],
+      "ctrl-5": [
+        "workspace::ActivatePane",
+        4
+      ],
+      "ctrl-6": [
+        "workspace::ActivatePane",
+        5
+      ],
+      "ctrl-7": [
+        "workspace::ActivatePane",
+        6
+      ],
+      "ctrl-8": [
+        "workspace::ActivatePane",
+        7
+      ],
+      "ctrl-9": [
+        "workspace::ActivatePane",
+        8
       ]
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "f8": null,
+      "shift-f8": null,
+      "cmd-m": "editor::MoveToEnclosingBracket",
+      "cmd-k d": "editor::GoToDiagnostic",
+      "cmd-k cmd-d": "editor::GoToPrevDiagnostic",
+      "cmd-e": [
+        "editor::SelectNext",
+        {
+          "replace_newest": true
+        }
+      ],
+      "cmd-shift-e": [
+        "editor::SelectPrevious",
+        {
+          "replace_newest": true
+        }
+      ],
+      "cmd-d": [
+        "editor::SelectNext",
+        {
+          "replace_newest": false
+        }
+      ],
+      "cmd-shift-d": [
+        "editor::SelectPrevious",
+        {
+          "replace_newest": false
+        }
+      ]
+    }
+  },
+  {
+    "context": "Editor && mode == full",
+    "bindings": {
+      // when rust runnables are added replace this with it
+      "cmd-r": "projects::OpenRecent",
+      "cmd-o": "outline::Toggle"
+    }
+  },
+  // put key-bindings here if you want them to work only in normal mode
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      "alt-shift-h": [
+        "workspace::SwapPaneInDirection",
+        "Left"
+      ],
+      "alt-shift-l": [
+        "workspace::SwapPaneInDirection",
+        "Right"
+      ],
+      "alt-shift-k": [
+        "workspace::SwapPaneInDirection",
+        "Up"
+      ],
+      "alt-shift-j": [
+        "workspace::SwapPaneInDirection",
+        "Down"
+      ],
+      "alt-h": [
+        "workspace::ActivatePaneInDirection",
+        "Left"
+      ],
+      "alt-l": [
+        "workspace::ActivatePaneInDirection",
+        "Right"
+      ],
+      "alt-k": [
+        "workspace::ActivatePaneInDirection",
+        "Up"
+      ],
+      "alt-j": [
+        "workspace::ActivatePaneInDirection",
+        "Down"
+      ]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work in insert mode
+      "alt-k": "editor::MoveLineUp",
+      "alt-j": "editor::MoveLineDown",
+      "alt-l": "editor::SelectLargerSyntaxNode",
+      "alt-h": "editor::SelectSmallerSyntaxNode"
     }
   }
 ]
