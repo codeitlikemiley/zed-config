@@ -1,11 +1,38 @@
 [
-  // put key-bindings here that you want to work always
+  // put key-bindings here that you want to unbind
+  //
   {
     "bindings": {
-      "cmd-h": null,
+      "f8": null,
+      "shift-f8": null,
+      "ctrl-1": null,
+      "ctrl-2": null,
+      "ctrl-3": null,
+      "ctrl-4": null,
+      "ctrl-5": null,
+      "ctrl-6": null,
+      "ctrl-7": null,
+      "ctrl-8": null,
+      "ctrl-9": null,
+      "ctrl-0": null,
+      "alt-t": null, // task re-run
+      "cmd-h": null, // hide
+      "cmd-?": null,
+      "cmd-shift-b": null,
+      "alt-cmd-x": null,
+      "alt-shift-t": null, // task spawn
       "cmd-k cmd-z": "zed::ToggleFullScreen",
       "cmd-shift-o": "workspace::Open"
       // replace with macro expansion in rust
+    }
+  },
+  // Cannot be remapped
+  {
+    "bindings": {
+      "cmd-b": null,
+      "cmd-shift-m": null,
+      "shift-space": null,
+      "cmd-j": null
     }
   },
   {
@@ -16,52 +43,15 @@
       "cmd-k h": "pane::SplitLeft",
       "cmd-k l": "pane::SplitRight",
       // cannot disable ctrl-1
-      "cmd-1": [
-        "pane::ActivateItem",
-        0
-      ],
-      "cmd-2": [
-        "pane::ActivateItem",
-        1
-      ],
-      "cmd-3": [
-        "pane::ActivateItem",
-        2
-      ],
-      "cmd-4": [
-        "pane::ActivateItem",
-        3
-      ],
-      "cmd-5": [
-        "pane::ActivateItem",
-        4
-      ],
-      "cmd-6": [
-        "pane::ActivateItem",
-        5
-      ],
-      "cmd-7": [
-        "pane::ActivateItem",
-        6
-      ],
-      "cmd-8": [
-        "pane::ActivateItem",
-        7
-      ],
-      "cmd-9": [
-        "pane::ActivateItem",
-        8
-      ],
-      "ctrl-1": null,
-      "ctrl-2": null,
-      "ctrl-3": null,
-      "ctrl-4": null,
-      "ctrl-5": null,
-      "ctrl-6": null,
-      "ctrl-7": null,
-      "ctrl-8": null,
-      "ctrl-9": null,
-      "ctrl-0": null
+      "cmd-1": ["pane::ActivateItem", 0],
+      "cmd-2": ["pane::ActivateItem", 1],
+      "cmd-3": ["pane::ActivateItem", 2],
+      "cmd-4": ["pane::ActivateItem", 3],
+      "cmd-5": ["pane::ActivateItem", 4],
+      "cmd-6": ["pane::ActivateItem", 5],
+      "cmd-7": ["pane::ActivateItem", 6],
+      "cmd-8": ["pane::ActivateItem", 7],
+      "cmd-9": ["pane::ActivateItem", 8]
     }
   },
   // vim keybinding like for project panel
@@ -91,67 +81,18 @@
   {
     "context": "Workspace",
     "bindings": {
-      "cmd-j": null,
-      "cmd-?": null,
-      "cmd-shift-m": null,
-      "alt-cmd-x": "workspace::CloseAllDocks",
-      // dock controls
-      "cmd-b": "workspace::ToggleLeftDock",
-      "cmd-shift-b": "workspace::ToggleRightDock",
-      // bottom dock controls
-      "cmd-`": "terminal_panel::ToggleFocus",
-      "ctrl-`": "workspace::ToggleBottomDock",
-      // left sidebar panels
-      "cmd-f1": "project_panel::ToggleFocus",
-      "cmd-f2": "collab_panel::ToggleFocus",
-      "cmd-f3": "diagnostics::Deploy",
-      "shift-space": "project_panel::ToggleFocus",
-      "ctrl-1": [
-        "workspace::ActivatePane",
-        0
-      ],
-      "ctrl-2": [
-        "workspace::ActivatePane",
-        1
-      ],
-      "ctrl-3": [
-        "workspace::ActivatePane",
-        2
-      ],
-      "ctrl-4": [
-        "workspace::ActivatePane",
-        3
-      ],
-      "ctrl-5": [
-        "workspace::ActivatePane",
-        4
-      ],
-      "ctrl-6": [
-        "workspace::ActivatePane",
-        5
-      ],
-      "ctrl-7": [
-        "workspace::ActivatePane",
-        6
-      ],
-      "ctrl-8": [
-        "workspace::ActivatePane",
-        7
-      ],
-      "ctrl-9": [
-        "workspace::ActivatePane",
-        8
-      ]
+      "cmd-r": "task::Rerun",
+      "cmd-shift-r": "task::Spawn",
+      "cmd-`": "workspace::ToggleLeftDock",
+      "ctrl-`": "workspace::ToggleBottomDock"
     }
   },
+  // Multi Select Keys
   {
     "context": "Editor",
     "bindings": {
-      "f8": null,
-      "shift-f8": null,
+      "cmd-i": "editor::ToggleInlayHints",
       "cmd-m": "editor::MoveToEnclosingBracket",
-      "cmd-k d": "editor::GoToDiagnostic",
-      "cmd-k cmd-d": "editor::GoToPrevDiagnostic",
       "cmd-e": [
         "editor::SelectNext",
         {
@@ -178,56 +119,29 @@
       ]
     }
   },
+  // put key-bindings here if you want them to work in normal & visual mode
   {
-    "context": "Editor && mode == full",
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
     "bindings": {
-      // when rust runnables are added replace this with it
-      "cmd-r": "projects::OpenRecent",
-      "cmd-o": "outline::Toggle"
+      "cmd-o": "outline::Toggle",
+      // vim bindings for Diagnostics
+      "[ e": "editor::GoToDiagnostic",
+      "] e": "editor::GoToPrevDiagnostic",
+      // pane movements
+      "alt-shift-h": ["workspace::SwapPaneInDirection", "Left"],
+      "alt-shift-l": ["workspace::SwapPaneInDirection", "Right"],
+      "alt-shift-k": ["workspace::SwapPaneInDirection", "Up"],
+      "alt-shift-j": ["workspace::SwapPaneInDirection", "Down"],
+      "alt-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "alt-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "alt-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "alt-j": ["workspace::ActivatePaneInDirection", "Down"]
     }
   },
-  // put key-bindings here if you want them to work only in normal mode
-  {
-    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
-    "bindings": {
-      "alt-shift-h": [
-        "workspace::SwapPaneInDirection",
-        "Left"
-      ],
-      "alt-shift-l": [
-        "workspace::SwapPaneInDirection",
-        "Right"
-      ],
-      "alt-shift-k": [
-        "workspace::SwapPaneInDirection",
-        "Up"
-      ],
-      "alt-shift-j": [
-        "workspace::SwapPaneInDirection",
-        "Down"
-      ],
-      "alt-h": [
-        "workspace::ActivatePaneInDirection",
-        "Left"
-      ],
-      "alt-l": [
-        "workspace::ActivatePaneInDirection",
-        "Right"
-      ],
-      "alt-k": [
-        "workspace::ActivatePaneInDirection",
-        "Up"
-      ],
-      "alt-j": [
-        "workspace::ActivatePaneInDirection",
-        "Down"
-      ]
-    }
-  },
+  // put key-bindings here if you want them to work in insert mode
   {
     "context": "Editor && vim_mode == insert && !menu",
     "bindings": {
-      // put key-bindings here if you want them to work in insert mode
       "alt-k": "editor::MoveLineUp",
       "alt-j": "editor::MoveLineDown",
       "alt-l": "editor::SelectLargerSyntaxNode",
