@@ -18,13 +18,14 @@
       "alt-t": null, // task re-run
       "cmd-h": null, // hide
       "cmd-?": null,
-      "cmd-shift-b": null,
       "alt-cmd-x": null,
       "alt-shift-t": null, // task spawn
+      "cmd-shift-b": "workspace::ToggleRightDock",
       "cmd-k cmd-z": "zed::ToggleFullScreen",
       "cmd-shift-o": "workspace::Open",
-      "cmd-shift-c": "zed::OpenLocalTasks"
-      // replace with macro expansion in rust
+      "cmd-shift-c": "zed::OpenLocalTasks",
+      "cmd-f1": "project_panel::ToggleFocus",
+      "cmd-f2": "diagnostics::Deploy"
     }
   },
   // Cannot be remapped
@@ -84,7 +85,6 @@
     "bindings": {
       "cmd-r": "task::Rerun",
       "cmd-shift-r": "task::Spawn",
-      "cmd-`": "workspace::ToggleLeftDock",
       "ctrl-`": "workspace::ToggleBottomDock"
     }
   },
