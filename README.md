@@ -15,7 +15,7 @@ CMD + SHIFT + C = Open Local Task
   
   <summary>setup task.json e.g. add `leptosfmt` </summary>
   
-<code>
+```json
 [
   {
     "label": "leptos fmt",
@@ -35,7 +35,7 @@ CMD + SHIFT + C = Open Local Task
   }
 ]
 
-</code>
+```
 
 </details>
 
