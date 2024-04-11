@@ -22,7 +22,8 @@
       "alt-cmd-x": null,
       "alt-shift-t": null, // task spawn
       "cmd-k cmd-z": "zed::ToggleFullScreen",
-      "cmd-shift-o": "workspace::Open"
+      "cmd-shift-o": "workspace::Open",
+      "cmd-shift-c": "zed::OpenLocalTasks"
       // replace with macro expansion in rust
     }
   },
