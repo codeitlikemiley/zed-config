@@ -180,6 +180,12 @@
           "task_name": "cargo run test"
         }
       ],
+      ", r c": [
+        "task::Spawn",
+        {
+          "task_name": "cargo run clean"
+        }
+      ],
       ", b b": [
         "task::Spawn",
         {
