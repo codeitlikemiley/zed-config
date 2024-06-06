@@ -146,5 +146,46 @@
       "alt-l": "editor::SelectLargerSyntaxNode",
       "alt-h": "editor::SelectSmallerSyntaxNode"
     }
+  },
+  {
+    "context": "EmptyPane || SharedScreen || vim_operator == none && !VimWaiting && vim_mode != insert",
+    "bindings": {
+      ", r b": [
+        "task::Spawn",
+        {
+          "task_name": "cargo run bin"
+        }
+      ],
+      ", r d": [
+        "task::Spawn",
+        {
+          "task_name": "cargo run doc"
+        }
+      ],
+      ", r r": [
+        "task::Spawn",
+        {
+          "task_name": "cargo run main"
+        }
+      ],
+      ", r t": [
+        "task::Spawn",
+        {
+          "task_name": "cargo run test"
+        }
+      ],
+      ", b b": [
+        "task::Spawn",
+        {
+          "task_name": "cargo build"
+        }
+      ],
+      ", b r": [
+        "task::Spawn",
+        {
+          "task_name": "cargo build --release"
+        }
+      ]
+    }
   }
 ]
