@@ -150,6 +150,12 @@
   {
     "context": "EmptyPane || SharedScreen || vim_operator == none && !VimWaiting && vim_mode != insert",
     "bindings": {
+      "alt-r": [
+        "task::Spawn",
+        {
+          "task_name": "cargo run test"
+        }
+      ],
       ", r b": [
         "task::Spawn",
         {
