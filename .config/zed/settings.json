@@ -3,7 +3,7 @@
     "diagnostics": false,
     "metrics": false
   },
-  "theme": "Gruvbox Dark",
+  "theme": "Everforest Dark",
   "base_keymap": "VSCode",
   "vim_mode": true,
   "cursor_blink": false,
@@ -13,9 +13,14 @@
     "enabled": false,
     "version": "1"
   },
+  "tabs": {
+    "close_position": "right",
+    "git_status": true
+  },
   "chat_panel": {
     "button": false
   },
+  "confirm_quit": true,
   "collaboration_panel": {
     "button": false
   },
@@ -24,6 +29,20 @@
   },
   "features": {
     "copilot": false
+  },
+  "languages": {
+    "Rust": {
+      "indent_guides": {
+        "enabled": false
+      },
+      "tab_size": 4,
+      "show_inline_completions": false
+    },
+    "TOML": {
+      "indent_guides": {
+        "enabled": false
+      }
+    }
   },
   "lsp": {
     "rust-analyzer": {
