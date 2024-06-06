@@ -1,0 +1,81 @@
+[
+  // binded on command-r-b
+  {
+    "label": "cargo run bin",
+    "command": "cargo",
+    "args": [
+      "run",
+      "--package",
+      "$ZED_CUSTOM_RUST_PACKAGE",
+      "--bin",
+      "$ZED_STEM"
+    ],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  // binded on comma-r-d
+  {
+    "label": "cargo run doc",
+    "command": "cargo",
+    "args": [
+      "test",
+      "--doc",
+      "-p",
+      "$ZED_CUSTOM_RUST_PACKAGE",
+      "--",
+      "$ZED_SYMBOL",
+      "--",
+      "--nocapture"
+    ],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+    "tags": ["rust-unit-test"],
+    "problemMatcher": "$rustc"
+  },
+  // bind on comma-r-r
+  {
+    "label": "cargo run main",
+    "command": "cargo run --package $ZED_CUSTOM_RUST_PACKAGE --bin $ZED_CUSTOM_RUST_PACKAGE",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  // binded on comma-r-t
+  {
+    "label": "cargo run test",
+    "command": "cargo",
+    "args": [
+      "test",
+      "-p",
+      "$ZED_CUSTOM_RUST_PACKAGE",
+      "$ZED_SYMBOL",
+      "--",
+      "--nocapture"
+    ],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+    "tags": ["rust-unit-test"],
+    "problemMatcher": "$rustc"
+  },
+  // binded on comma-b-b
+  {
+    "label": "cargo build",
+    "command": "cargo",
+    "args": ["build"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  // binded on comma-b-r
+  {
+    "label": "cargo build --release",
+    "command": "cargo",
+    "args": ["build", "--release"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  }
+]
